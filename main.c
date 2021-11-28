@@ -19,6 +19,7 @@ int main()
     char auxA[100];
     char auxB[100];
     char auxFactorial[100];
+    char opcionAux[100];
     int a = 0;
     int b = 0;
     int validacionNumero = 0;
@@ -71,7 +72,17 @@ int main()
 
         printf(GREEN "Elija que hacer:" RESET);
 
-        scanf("%d", &opcion);
+        scanf("%s", &opcionAux);
+
+        if (validarNumero(opcionAux) == 0)
+        {
+            printf(RED "El dato ingresado para el menu no es un numero, por favor ingrese un numero \n" RESET);
+            printf("\n");
+        }
+        if (validarNumero(opcionAux) == 1)
+        {
+            opcion = atoi(opcionAux);
+        }
 
         switch (opcion)
         {
